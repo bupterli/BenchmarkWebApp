@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<db>
+		<url>jdbc:mysql://s7otto.macromedia.com:3306/automation_benchmark?autoReconnect=true</url>
+		<user>reports</user>
+		<password>reports</password>
+	</db>
+	
+	<jsp>WebContent/WEB_INF/jsp/</jsp>
+	<js>WebContent/javascript/</js>
+	<css>WebContent/css/</css>
+	
+	<last_release_version>5.2.3</last_release_version>
+	<last_release_server_buildnumber>5.2-178772-67</last_release_server_buildnumber>
+
+	<performance_threshold>3.00</performance_threshold></config>

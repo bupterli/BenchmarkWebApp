@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+  <display-name>BenchmarkWebApp</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>dashboard</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
+  
+  <servlet>
+    <servlet-name>base</servlet-name>
+    <servlet-class>com.scene7.qa.benchmark.BaseServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <description></description>
+    <display-name>DashboardServlet</display-name>
+    <servlet-name>DashboardServlet</servlet-name>
+    <servlet-class>com.scene7.qa.benchmark.DashboardServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>report</servlet-name>
+    <servlet-class>com.scene7.qa.benchmark.ReportServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>report</servlet-name>
+    <url-pattern>/report</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>To categorize test cases into &quot;category&quot; and &quot;description&quot;</description>
+    <display-name>CategoryServlet</display-name>
+    <servlet-name>CategoryServlet</servlet-name>
+    <servlet-class>com.scene7.qa.benchmark.CategoryServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CategoryServlet</servlet-name>
+    <url-pattern>/category</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description>AJAX class that handles get status requests</description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>com.scene7.qa.benchmark.StatusServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/status</url-pattern>
+  </servlet-mapping>
+ 	
+</web-app>
